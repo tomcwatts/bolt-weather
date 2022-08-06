@@ -26,9 +26,9 @@ export default function WeatherStats(props: Props) {
   return (
     <>
       <FlexGrid
-        flexGridColumnCount={[2, 3, 4, 4]}
-        flexGridRowGap="scale600"
-        flexGridColumnGap={['scale0', 'scale100', 'scale900', 'scale900']}
+        flexGridColumnCount={[1, 3, 4, 4]}
+        flexGridRowGap={['scale0', 'scale600']}
+        flexGridColumnGap={['scale0', 'scale100', 'scale900']}
         marginBottom="scale900"
       >
         <FlexGridItem>

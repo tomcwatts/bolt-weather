@@ -41,8 +41,10 @@ export default function WeatherToday() {
     display: 'flex',
     color: theme.colors.contentPrimary,
     [theme.mediaQuery.small]: {
+      fontSize: '6rem',
+    },
+    [theme.mediaQuery.medium]: {
       fontSize: '7rem',
-      // lineHeight: '6.8rem',
     },
   });
   const feelsLikeText = css({
@@ -82,8 +84,9 @@ export default function WeatherToday() {
             display: 'flex',
             flex: '0 1 40%',
             justifyContent: 'center',
-            maxWidth: '120px',
-            [theme.mediaQuery.small]: { maxWidth: '100%' },
+            maxWidth: '150px',
+            marginLeft: 'auto',
+            [theme.mediaQuery.small]: { marginLeft: '0', maxWidth: '100%' },
             [theme.mediaQuery.medium]: { flex: '0 1 28%' },
           })}
         >
@@ -94,7 +97,8 @@ export default function WeatherToday() {
         <div
           className={css({
             display: 'flex',
-            flex: '1 1 60%',
+            flex: '0 1 50%',
+            [theme.mediaQuery.small]: { flex: '1 1 60%' },
             [theme.mediaQuery.medium]: { flex: '0 1 32%' },
             [theme.mediaQuery.large]: { flex: '0 1 36%' },
           })}
@@ -152,11 +156,13 @@ export default function WeatherToday() {
               display: 'flex',
               flexFlow: 'column nowrap',
               justifyContent: 'flex-start',
+              alignItems: 'flex-end',
               flex: '0 1 50%',
-              paddingTop: theme.sizing.scale600,
               paddingBottom: theme.sizing.scale600,
               [theme.mediaQuery.small]: {
+                paddingTop: theme.sizing.scale600,
                 flex: '0 1 33%',
+                alignItems: 'flex-start',
               },
               [theme.mediaQuery.medium]: {
                 flex: '0 1 50%',
@@ -177,12 +183,13 @@ export default function WeatherToday() {
               display: 'flex',
               flexFlow: 'column nowrap',
               justifyContent: 'flex-start',
-              flex: '0 1 50%',
               alignItems: 'flex-start',
-              paddingTop: theme.sizing.scale600,
+              flex: '0 1 50%',
               paddingBottom: theme.sizing.scale600,
               [theme.mediaQuery.small]: {
+                paddingTop: theme.sizing.scale600,
                 flex: '0 1 33%',
+                alignItems: 'flex-start',
               },
               [theme.mediaQuery.medium]: {
                 flex: '0 1 50%',

@@ -12,12 +12,12 @@ const darkPrimitives = {
 
 const lightOverrides = {
   breakpoints: {
-    small: 480,
+    small: 460,
     medium: 769,
     large: 1024,
   },
   mediaQuery: {
-    small: '@media screen and (min-width: 480px)',
+    small: '@media screen and (min-width: 460px)',
     medium: '@media screen and (min-width: 769px)',
     large: '@media screen and (min-width: 1024px)',
   },
@@ -61,12 +61,12 @@ const lightOverrides = {
 
 const darkOverrides = {
   breakpoints: {
-    small: 480,
+    small: 460,
     medium: 769,
     large: 1024,
   },
   mediaQuery: {
-    small: '@media screen and (min-width: 480px)',
+    small: '@media screen and (min-width: 460px)',
     medium: '@media screen and (min-width: 769px)',
     large: '@media screen and (min-width: 1024px)',
   },

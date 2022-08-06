@@ -42,11 +42,15 @@ export function WeatherStatCard(props: Props) {
     display: 'flex',
     flex: '1',
     maxWidth: '100%',
-    minWidth: '100px',
-    flexFlow: 'column nowrap',
+    minWidth: '80px',
+    flexFlow: props.compact ? 'row nowrap' : 'column nowrap',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: props.compact ? 'space-between' : 'flex-start',
     paddingLeft: theme.sizing.scale400,
+    [theme.mediaQuery.small]: {
+      flexFlow: 'column nowrap',
+      justifyContent: 'flex-start',
+    },
   });
 
   return (
@@ -91,7 +95,7 @@ const StatValue: React.FunctionComponent<{
       ? theme.typography.HeadingSmall
       : theme.typography.HeadingMedium),
     color: theme.colors.contentPrimary,
-    fontSize: compact ? theme.sizing.scale500 : theme.sizing.scale650,
+    fontSize: compact ? theme.sizing.scale550 : theme.sizing.scale650,
     fontWeight: 700,
     lineHeight: 1,
     marginTop: 0,

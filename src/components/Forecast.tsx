@@ -69,6 +69,12 @@ export default function Forecast() {
       color: theme.colors.contentSecondary,
       [theme.mediaQuery.small]: {
         ...($small
+          ? theme.typography.LabelXSmall
+          : theme.typography.HeadingSmall),
+        fontWeight: $bold ? 800 : 400,
+      },
+      [theme.mediaQuery.medium]: {
+        ...($small
           ? theme.typography.LabelSmall
           : theme.typography.HeadingMedium),
         fontWeight: $bold ? 800 : 400,
