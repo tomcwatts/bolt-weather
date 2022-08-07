@@ -1,6 +1,8 @@
 import Head from 'next/head';
+import { useColorSchemeStore } from '../stores/colorScheme';
 
 export default function Meta() {
+  const colorScheme = useColorSchemeStore((state) => state.colorScheme);
   return (
     <Head>
       <title>Bolt Weather</title>
@@ -8,16 +10,10 @@ export default function Meta() {
         name="description"
         content="Check the weather and get weather alerts anywhere in the world."
       />
-      <meta name="msapplication-TileColor" content="#13429a" />
+      <meta name="msapplication-TileColor" content="#12419a" />
       <meta
         name="theme-color"
-        content="#ffffff"
-        media="(prefers-color-scheme: light)"
-      />
-      <meta
-        name="theme-color"
-        content="#13429a"
-        media="(prefers-color-scheme: dark)"
+        content={colorScheme === 'light' ? '#ffffff' : '#12419a'}
       />
       <link
         rel="preconnect"
