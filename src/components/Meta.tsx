@@ -11,7 +11,7 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#13429a" />
       <meta
         name="theme-color"
-        content="#13429a"
+        content="#ffffff"
         media="(prefers-color-scheme: light)"
       />
       <meta
