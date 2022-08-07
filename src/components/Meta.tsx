@@ -16,7 +16,7 @@ export default function Meta() {
       />
       <meta
         name="theme-color"
-        content="#1C52B7"
+        content="#13429a"
         media="(prefers-color-scheme: dark)"
       />
       <link
