@@ -25,7 +25,7 @@ export default function WeatherToday() {
   });
 
   const tempText = css({
-    fontSize: '4rem',
+    fontSize: '3.5rem',
     lineHeight: '1',
     fontWeight: 700,
     marginTop: theme.sizing.scale500,
@@ -77,6 +77,7 @@ export default function WeatherToday() {
             display: 'flex',
             flex: '0 1 40%',
             justifyContent: 'center',
+            minHeight: '120px',
             maxWidth: '150px',
             marginLeft: 'auto',
             [theme.mediaQuery.small]: { marginLeft: '0', maxWidth: '100%' },
@@ -148,8 +149,8 @@ export default function WeatherToday() {
           className={css({
             flex: '1 0 100%',
             textAlign: 'center',
-            marginTop: theme.sizing.scale400,
-            marginBottom: theme.sizing.scale400,
+            marginTop: `-${theme.sizing.scale600}`,
+            marginBottom: theme.sizing.scale600,
             [theme.mediaQuery.small]: {
               display: 'none',
             },
@@ -157,7 +158,7 @@ export default function WeatherToday() {
         >
           <p
             className={css({
-              ...theme.typography.LabelSmall,
+              ...theme.typography.LabelMedium,
               color: theme.colors.contentSecondary,
               fontWeight: 400,
               lineHeight: 1,
