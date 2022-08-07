@@ -13,35 +13,29 @@ import WeatherStats from './WeatherStats';
 export default function WeatherToday() {
   const [css, theme] = useStyletron();
   const { weather, tempUnit } = useWeather();
-  const currentWeather = weather.current;
-  const { temp } = currentWeather;
-  const { description } = currentWeather.weather[0];
-  const { icon } = currentWeather.weather[0];
+  const { temp } = weather.current;
+  const { description, icon } = weather.current.weather[0];
 
   const tempContain = css({
     display: 'flex',
     flexFlow: 'column wrap',
-    // justifyContent: 'center',
-    // alignItems: 'center',
     height: '100%',
     alignItems: 'flex-start',
     justifyContent: 'center',
   });
 
   const tempText = css({
-    // alignSelf: 'flex-start',
-    // justifySelf: 'flex-start',
     fontSize: '4rem',
-    // lineHeight: '3rem',
     lineHeight: '1',
     fontWeight: 700,
-    // marginTop: theme.sizing.scale1000,
-    marginTop: '0',
-    marginBottom: theme.sizing.scale500,
+    marginTop: theme.sizing.scale500,
+    marginBottom: '0',
     display: 'flex',
     color: theme.colors.contentPrimary,
     [theme.mediaQuery.small]: {
       fontSize: '6rem',
+      marginTop: '0',
+      marginBottom: theme.sizing.scale500,
     },
     [theme.mediaQuery.medium]: {
       fontSize: '7rem',
@@ -53,7 +47,6 @@ export default function WeatherToday() {
     lineHeight: 1,
     fontWeight: 500,
     marginTop: 0,
-    // minHeight: '62px',
     marginBottom: 0,
     display: 'flex',
     alignItems: 'center',
@@ -121,26 +114,66 @@ export default function WeatherToday() {
                 °
               </span>
             </p>
-            <p
+            <div
               className={css({
-                ...theme.typography.LabelSmall,
-                color: theme.colors.contentSecondary,
-                fontWeight: 400,
-                lineHeight: 1,
-                marginTop: 0,
-                marginBottom: 0,
-                ':first-letter': {
-                  textTransform: 'uppercase',
-                },
+                display: 'none',
                 [theme.mediaQuery.small]: {
-                  ...theme.typography.HeadingXSmall,
-                  fontWeight: 400,
+                  display: 'block',
                 },
               })}
             >
-              {description}
-            </p>
+              <p
+                className={css({
+                  ...theme.typography.LabelSmall,
+                  color: theme.colors.contentSecondary,
+                  fontWeight: 400,
+                  lineHeight: 1,
+                  marginTop: 0,
+                  marginBottom: 0,
+                  ':first-letter': {
+                    textTransform: 'uppercase',
+                  },
+                  [theme.mediaQuery.small]: {
+                    ...theme.typography.HeadingXSmall,
+                    fontWeight: 400,
+                  },
+                })}
+              >
+                {description}
+              </p>
+            </div>
           </div>
+        </div>
+        <div
+          className={css({
+            flex: '1 0 100%',
+            textAlign: 'center',
+            marginTop: theme.sizing.scale400,
+            marginBottom: theme.sizing.scale400,
+            [theme.mediaQuery.small]: {
+              display: 'none',
+            },
+          })}
+        >
+          <p
+            className={css({
+              ...theme.typography.LabelSmall,
+              color: theme.colors.contentSecondary,
+              fontWeight: 400,
+              lineHeight: 1,
+              marginTop: 0,
+              marginBottom: 0,
+              ':first-letter': {
+                textTransform: 'uppercase',
+              },
+              [theme.mediaQuery.small]: {
+                ...theme.typography.HeadingXSmall,
+                fontWeight: 400,
+              },
+            })}
+          >
+            {description}
+          </p>
         </div>
         <div
           className={css({
